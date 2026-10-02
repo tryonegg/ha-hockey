@@ -1,0 +1,16 @@
+{
+  "domain": "hockey",
+  "name": "Hockey",
+  "codeowners": ["@tryonegg"],
+  "config_flow": true,
+  "documentation": "https://github.com/tryonegg/ha-hockey",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/tryonegg/ha-hockey/issues",
+  "requirements": [
+    "cachetools>=6.2.4",
+    "nhl-api-py==3.1.1",
+    "python-dateutil>=2.8.2"
+  ],
+  "version": "0.1.0"
+}

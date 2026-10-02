@@ -1,0 +1,108 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Choose a league",
+        "description": "Pick the league you want to follow. Choose \"HockeyTech (Custom)\" to enter your own API key and client code for a league that is not listed.",
+        "data": {
+          "league": "League"
+        }
+      },
+      "hockeytech": {
+        "title": "HockeyTech credentials",
+        "description": "Enter the API key and client code for the HockeyTech-powered league you want to follow.",
+        "data": {
+          "key": "API key",
+          "client_code": "Client code"
+        }
+      },
+      "hockeytech_team": {
+        "title": "Choose a team",
+        "description": "Select the team to track. A sensor is created for that team's next or current game.",
+        "data": {
+          "team_id": "Team"
+        }
+      },
+      "hockeytech_league_team": {
+        "title": "Choose a team",
+        "description": "Select the team to track. A sensor is created for that team's next or current game.",
+        "data": {
+          "team_id": "Team"
+        }
+      },
+      "nhl_team": {
+        "title": "Choose a team",
+        "description": "Select the team to track. A sensor is created for that team's next or current game.",
+        "data": {
+          "team_id": "Team"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the league API. Check your internet connection and try again.",
+      "invalid_credentials": "Could not load teams with those credentials. Check the API key and client code and try again."
+    },
+    "abort": {
+      "already_configured": "That team is already set up.",
+      "cannot_connect": "Could not reach the league API. Check your internet connection and try again."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Display options",
+        "description": "Control how long a finished game stays on the card, and the colours the card uses for this team.",
+        "data": {
+          "linger_hours": "Show a finished game for (hours)",
+          "last_result_hours": "Hide the previous result when the next game is within (hours)",
+          "color_home_background": "Home background colour",
+          "color_home_text": "Home text colour",
+          "color_home_accent": "Home accent colour",
+          "color_away_background": "Away background colour",
+          "color_away_text": "Away text colour",
+          "color_away_accent": "Away accent colour",
+          "reset_colors": "Reset colours to team defaults"
+        },
+        "data_description": {
+          "linger_hours": "Counted from the estimated end of the game, roughly three hours after puck drop. Set to 0 to switch to the next game as soon as it is final.",
+          "last_result_hours": "After the finished game stops being the main scorebug, its result is shown as a small strip beneath the next game until the next game is this close. Set to 0 to never show it.",
+          "color_home_background": "Card background when this team is playing at home. Shown as --home-background.",
+          "color_home_text": "Text on the home background. Shown as --home-text.",
+          "color_home_accent": "A third home-game tone for rules and borders, not paired with text. Shown as --home-accent.",
+          "color_away_background": "Card background when this team is playing away. Shown as --away-background.",
+          "color_away_text": "Text on the away background. Shown as --away-text.",
+          "color_away_accent": "A third away-game tone for rules and borders, not paired with text. Shown as --away-accent.",
+          "reset_colors": "Tick to discard the six colours above and go back to this team's shipped palette. NHL and PWHL teams have defaults; other leagues have none until you set them here."
+        }
+      }
+    }
+  },
+  "entity": {
+    "event": {
+      "game_events": {
+        "state_attributes": {
+          "event_type": {
+            "state": {
+              "pregame": "Pregame",
+              "game_start": "Puck drop",
+              "period_start": "Period start",
+              "period_end": "Period end",
+              "goal": "Goal",
+              "opponent_goal": "Opponent goal",
+              "goal_overturned": "Goal overturned",
+              "opponent_goal_overturned": "Opponent goal overturned",
+              "power_play": "Power play",
+              "penalty_kill": "Penalty kill",
+              "goalie_pulled": "Goalie pulled",
+              "overtime": "Overtime",
+              "shootout": "Shootout",
+              "final": "Final",
+              "win": "Win",
+              "loss": "Loss"
+            }
+          }
+        }
+      }
+    }
+  }
+}
