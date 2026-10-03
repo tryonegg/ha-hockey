@@ -53,12 +53,13 @@ def _build_leagues_dict() -> Dict[str, str]:
     """Build leagues dictionary dynamically from config and hardcoded entries."""
     leagues = {}
     # Add NHL first
-    leagues["nhl"] = "NHL"
+    leagues["nhl"] = "NHL - National Hockey League"
     # Add all leagues from league_config in alphabetical order
     for league_code in sorted(HOCKEYTECH_LEAGUES.keys()):
         league_info = HOCKEYTECH_LEAGUES[league_code]
         leagues[league_code] = league_info.get("name", league_code.upper())
     # Add HockeyTech custom as last item
+    leagues = {k: leagues[k] for k in sorted(leagues.keys())}
     leagues["hockeytech"] = "HockeyTech (Custom)"
     return leagues
 
