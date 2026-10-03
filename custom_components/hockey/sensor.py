@@ -28,9 +28,9 @@ async def async_setup_entry(
         HockeyGameStateSensor(
             data.get("league"), data.get("team_id"), config_entry.title, data, coordinator
         ),
-        # HockeyNextGameSensor(
-        #     data.get("league"), data.get("team_id"), config_entry.title, data, coordinator
-        # ),
+        HockeyNextGameSensor(
+            data.get("league"), data.get("team_id"), config_entry.title, data, coordinator
+        ),
     ])
     return True
 
